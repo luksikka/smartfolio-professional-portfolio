@@ -4,40 +4,40 @@ import './Projects.css';
 const Projects = () => {
   const projects = [
     {
-      title: 'Data Ethics Framework',
-      category: 'Governance',
-      description: 'Developed comprehensive data ethics framework for multinational corporation, ensuring compliance and ethical data usage.',
-      tags: ['Ethics', 'Compliance', 'Strategy']
+      title: 'Company Registration & Incorporation',
+      category: 'Registration',
+      description: 'Facilitated complete company registration process for 25+ startups and businesses including name approval, MOA/AOA drafting, ROC filing, and obtaining DIN, PAN, TAN for smooth business setup.',
+      tags: ['Company Registration', 'ROC Filing', 'Incorporation']
     },
     {
-      title: 'Digital Transformation',
-      category: 'Consulting',
-      description: 'Led digital transformation initiative for enterprise client, resulting in 40% operational efficiency improvement.',
-      tags: ['Strategy', 'Technology', 'Change Management']
+      title: 'GST Registration & Returns Filing',
+      category: 'Tax Services',
+      description: 'Provided GST registration and monthly/quarterly returns filing services for 50+ businesses, ensuring timely compliance and maximizing input tax credit benefits.',
+      tags: ['GST Registration', 'GSTR Filing', 'Tax Compliance']
     },
     {
-      title: 'Risk Assessment Platform',
-      category: 'Analytics',
-      description: 'Designed and implemented risk assessment platform for financial services client with predictive analytics.',
-      tags: ['Analytics', 'Risk Management', 'Data']
+      title: 'Tax Audit & Assessment Support',
+      category: 'Tax Audit',
+      description: 'Conducted tax audit under Section 44AB for corporate clients with turnover above ₹1 Crore, ensuring Income Tax compliance and representing clients before tax authorities.',
+      tags: ['Tax Audit', 'Income Tax', 'Assessment']
     },
     {
-      title: 'Stakeholder Engagement',
-      category: 'Management',
-      description: 'Managed complex stakeholder engagement across 15+ departments for major organizational restructuring.',
-      tags: ['Leadership', 'Communication', 'Strategy']
+      title: 'Annual ROC Compliance Management',
+      category: 'ROC Compliance',
+      description: 'Managed complete annual ROC compliance for 40+ companies including filing of financial statements (AOC-4), annual returns (MGT-7), board resolutions, and maintaining statutory registers.',
+      tags: ['ROC Compliance', 'Annual Returns', 'MCA Filing']
     },
     {
-      title: 'Sustainability Initiative',
-      category: 'Strategy',
-      description: 'Developed sustainability strategy achieving 30% reduction in organizational carbon footprint.',
-      tags: ['Sustainability', 'Strategy', 'Impact']
+      title: 'Bookkeeping & Accounting Services',
+      category: 'Accounting',
+      description: 'Provided comprehensive bookkeeping and accounting services including ledger maintenance, bank reconciliation, financial statements preparation, and MIS reporting for SMEs.',
+      tags: ['Bookkeeping', 'Accounting', 'Financial Reports']
     },
     {
-      title: 'Process Optimization',
-      category: 'Operations',
-      description: 'Optimized business processes resulting in $2M annual cost savings for manufacturing client.',
-      tags: ['Efficiency', 'Operations', 'Cost Reduction']
+      title: 'Business Licensing & MSME Registration',
+      category: 'Licensing',
+      description: 'Assisted businesses in obtaining essential licenses including Trade License, MSME/Udyam Registration, IEC, FSSAI, Professional Tax, and industry-specific regulatory approvals.',
+      tags: ['Business Licensing', 'MSME Registration', 'Permits']
     }
   ];
 

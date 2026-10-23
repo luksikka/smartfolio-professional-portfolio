@@ -4,36 +4,38 @@ import './Experience.css';
 const Experience = () => {
   const experiences = [
     {
-      role: 'Senior Consultant & DEO',
-      company: 'Leading Consulting Firm',
+      role: 'Senior Business Consultant & Auditor',
+      company: 'Independent Practice',
       period: '2020 - Present',
-      description: 'Leading strategic consulting projects and ensuring ethical data governance across the organization.',
+      description: 'Providing comprehensive audit, taxation, company registration, and business advisory services to corporate clients and SMEs.',
       achievements: [
-        'Implemented data ethics framework for 50+ projects',
-        'Increased client satisfaction by 35%',
-        'Led team of 10+ consultants'
+        'Conducted 80+ financial and tax audits',
+        'Facilitated company registration for 50+ businesses',
+        'Managed ROC compliance for 60+ companies annually',
+        'Achieved 98% client retention rate'
       ]
     },
     {
-      role: 'Business Consultant',
-      company: 'Global Advisory Services',
+      role: 'Audit Manager',
+      company: 'Premier Audit & Associates',
       period: '2016 - 2020',
-      description: 'Provided business analysis and strategic recommendations to Fortune 500 companies.',
+      description: 'Led audit teams in conducting statutory audits, internal audits, and tax assessments for diverse industry clients.',
       achievements: [
-        'Delivered 30+ successful projects',
-        'Improved operational efficiency by 25%',
-        'Managed stakeholder relationships across multiple regions'
+        'Managed audit engagements worth ₹50 Crore+',
+        'Identified cost savings opportunities of ₹10 Crore',
+        'Supervised team of 8 audit professionals',
+        'Ensured 100% regulatory compliance'
       ]
     },
     {
-      role: 'Junior Analyst',
-      company: 'Tech Solutions Inc.',
+      role: 'Junior Auditor',
+      company: 'Financial Services Group',
       period: '2014 - 2016',
-      description: 'Conducted data analysis and supported senior consultants in project delivery.',
+      description: 'Assisted in conducting financial audits, tax filings, and maintaining books of accounts for client organizations.',
       achievements: [
-        'Developed analytical frameworks',
-        'Contributed to 15+ successful implementations',
-        'Recognized for outstanding performance'
+        'Completed 40+ audit assignments',
+        'Prepared financial statements and tax returns',
+        'Gained expertise in GST and Income Tax laws'
       ]
     }
   ];

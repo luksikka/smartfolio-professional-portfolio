@@ -1,16 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Hero.css';
 
 const Hero = () => {
+  const [typedText, setTypedText] = useState('');
+  const fullName = 'Mr. Shalashian';
+  
+  useEffect(() => {
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index <= fullName.length) {
+        setTypedText(fullName.slice(0, index));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100);
+    
+    return () => clearInterval(typingInterval);
+  }, []);
+
   return (
     <section id="home" className="hero">
       <div className="hero-content">
         <div className="hero-text">
           <p className="greeting">Hello, I'm</p>
-          <h1 className="name">Mr. Shalashian</h1>
-          <h2 className="title">Professional Consultant & DEO</h2>
+          <h1 className="name">
+            {typedText}
+            <span className="cursor">|</span>
+          </h1>
+          <h2 className="title">Business Consultant & Auditor</h2>
           <p className="description">
-            Delivering excellence through strategic insights and innovative solutions
+            Expert in Financial Auditing, Corporate Governance & Strategic Business Advisory
           </p>
           <div className="hero-buttons">
             <a href="#contact" className="btn btn-primary">Get In Touch</a>
@@ -21,7 +41,7 @@ const Hero = () => {
           <div className="image-placeholder">
             <div className="profile-photo-container">
               <img 
-                src="/profile.jpg" 
+                src="/profile.png.jpeg" 
                 alt="Mr. Shalashian" 
                 className="profile-photo"
                 onError={(e) => {

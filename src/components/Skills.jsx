@@ -3,11 +3,11 @@ import './Skills.css';
 
 const Skills = () => {
   const skills = [
-    { name: 'Strategic Consulting', level: 95 },
-    { name: 'Data Ethics & Governance', level: 90 },
-    { name: 'Business Analysis', level: 88 },
-    { name: 'Project Management', level: 92 },
-    { name: 'Data Analytics', level: 85 },
+    { name: 'Financial Audit & Analysis', level: 95 },
+    { name: 'Business Strategy & Planning', level: 92 },
+    { name: 'Risk Management & Compliance', level: 90 },
+    { name: 'Corporate Governance', level: 88 },
+    { name: 'Process Optimization', level: 93 },
     { name: 'Stakeholder Management', level: 90 },
   ];
 

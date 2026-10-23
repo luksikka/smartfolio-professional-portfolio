@@ -12,27 +12,27 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p className="about-paragraph">
-            I am a dedicated professional consultant with extensive experience in delivering 
-            strategic solutions and driving organizational success. As a DEO (Data Ethics Officer), 
-            I specialize in ensuring ethical data practices while maximizing business value.
+            As a seasoned Business Consultant with over a decade of experience, I specialize in 
+            financial auditing, corporate governance, and strategic business transformation. My expertise 
+            spans across comprehensive audit services, risk management, compliance advisory, and M&A due diligence.
           </p>
           <p className="about-paragraph">
-            My approach combines analytical rigor with creative problem-solving, enabling me to 
-            tackle complex challenges and deliver measurable results. I am passionate about 
-            leveraging technology and data to create positive impact.
+            I partner with organizations to optimize their operations, strengthen internal controls, 
+            ensure regulatory compliance, and drive sustainable growth. My approach combines deep financial 
+            acumen with strategic thinking to deliver measurable results and lasting value.
           </p>
           <div className="about-stats">
             <div className="stat-item">
-              <h3>10+</h3>
+              <h3>12+</h3>
               <p>Years Experience</p>
             </div>
             <div className="stat-item">
-              <h3>50+</h3>
-              <p>Projects Completed</p>
+              <h3>80+</h3>
+              <p>Audits Completed</p>
             </div>
             <div className="stat-item">
-              <h3>30+</h3>
-              <p>Happy Clients</p>
+              <h3>45+</h3>
+              <p>Corporate Clients</p>
             </div>
           </div>
         </div>
