@@ -2,22 +2,49 @@
   background-color: var(--bg-dark);
   position: relative;
   overflow: hidden;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* 3D Background Layers */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(226, 232, 240, 0.5);
+  font-weight: 400;
 }
 
 .contact::before {
   content: '';
   position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(30, 64, 175, 0.1), transparent);
-  animation: float 8s ease-in-out infinite;
+  top: -20%;
+  right: -20%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at 80% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+  transform: translateZ(-160px);
+  animation: contactFloat3D1 10s ease-in-out infinite;
 }
 
-@keyframes float {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-30px, -30px); }
+.contact::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -20%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at 20% 70%, rgba(30, 58, 138, 0.08) 0%, transparent 60%);
+  transform: translateZ(-110px);
+  animation: contactFloat3D2 12s ease-in-out infinite;
+}
+
+@keyframes contactFloat3D1 {
+  0%, 100% { transform: translateZ(-160px) translate(0, 0) rotate(0deg); }
+  50% { transform: translateZ(-160px) translate(-40px, -40px) rotate(-5deg); }
+}
+
+@keyframes contactFloat3D2 {
+  0%, 100% { transform: translateZ(-110px) translate(0, 0) rotate(0deg); }
+  50% { transform: translateZ(-110px) translate(40px, 30px) rotate(5deg); }
 }
 
 .section-subtitle {
@@ -36,23 +63,28 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  transform-style: preserve-3d;
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  animation: slideInLeft 0.8s ease 0.2s both;
+  animation: contactInfo3DEntrance 1s ease 0.2s both;
+  transform-style: preserve-3d;
 }
 
-@keyframes slideInLeft {
-  from {
+@keyframes contactInfo3DEntrance {
+  0% {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateZ(-150px) translateX(-100px) rotateY(-30deg);
   }
-  to {
+  60% {
+    transform: translateZ(70px) translateX(10px) rotateY(5deg);
+  }
+  100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateZ(50px) translateX(0) rotateY(0deg);
   }
 }
 
@@ -61,12 +93,17 @@
   align-items: flex-start;
   gap: 15px;
   padding: 20px;
-  background: white;
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(30, 41, 59, 0.95) 100%);
   border-radius: 15px;
-  border: 2px solid var(--border-color);
+  border: 2px solid rgba(212, 175, 55, 0.3);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
+  transform: translateZ(50px);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    0 0 1px rgba(212, 175, 55, 0.3);
 }
 
 .info-item::before {
@@ -85,34 +122,40 @@
 }
 
 .info-item:hover {
-  transform: translateX(10px);
-  box-shadow: 0 10px 40px rgba(30, 64, 175, 0.15);
-  border-color: var(--primary-color);
+  transform: translateZ(90px) translateX(15px) scale(1.02);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(212, 175, 55, 0.4),
+    inset 0 0 20px rgba(212, 175, 55, 0.1);
+  border-color: var(--accent-color);
 }
 
 .info-icon {
   font-size: 2rem;
   min-width: 50px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--accent-color), #ffd700);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
 }
 
 .info-item:hover .info-icon {
-  transform: scale(1.2) rotate(10deg);
+  transform: translateZ(30px) scale(1.3) rotate(15deg);
+  filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
 }
 
 .info-item h4 {
-  color: var(--text-primary);
+  color: #ffffff;
   margin-bottom: 5px;
   font-size: 1.1rem;
   font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .info-item p {
-  color: var(--text-secondary);
+  color: rgba(226, 232, 240, 0.9);
   font-weight: 500;
 }
 
@@ -125,14 +168,18 @@
 
 .social-link {
   padding: 14px 28px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
+  background: linear-gradient(135deg, var(--accent-color), #ffd700);
+  color: #0a0e1a;
   border-radius: 12px;
   font-weight: 700;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+  box-shadow: 
+    0 4px 20px rgba(212, 175, 55, 0.4),
+    0 0 30px rgba(212, 175, 55, 0.3);
+  transform-style: preserve-3d;
+  transform: translateZ(30px);
 }
 
 .social-link::before {
@@ -151,25 +198,31 @@
 }
 
 .social-link:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.4);
+  transform: translateZ(60px) translateY(-8px) scale(1.08);
+  box-shadow: 
+    0 15px 40px rgba(212, 175, 55, 0.6),
+    0 0 50px rgba(212, 175, 55, 0.5);
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  animation: slideInRight 0.8s ease 0.4s both;
+  animation: contactForm3DEntrance 1s ease 0.4s both;
+  transform-style: preserve-3d;
 }
 
-@keyframes slideInRight {
-  from {
+@keyframes contactForm3DEntrance {
+  0% {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateZ(-150px) translateX(100px) rotateY(30deg);
   }
-  to {
+  60% {
+    transform: translateZ(70px) translateX(-10px) rotateY(-5deg);
+  }
+  100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateZ(50px) translateX(0) rotateY(0deg);
   }
 }
 
@@ -180,31 +233,40 @@
 }
 
 .form-group label {
-  color: var(--text-primary);
+  color: var(--accent-color);
   font-weight: 600;
   margin-bottom: 8px;
   font-size: 0.95rem;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 .form-group input,
 .form-group textarea {
   padding: 16px;
-  border: 2px solid var(--border-color);
+  border: 2px solid rgba(212, 175, 55, 0.3);
   border-radius: 12px;
   font-size: 1rem;
   transition: all 0.3s ease;
   font-family: inherit;
-  background-color: white;
-  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--bg-card), rgba(30, 41, 59, 0.9));
+  color: #ffffff;
   position: relative;
+  box-shadow: 
+    inset 0 2px 8px rgba(0, 0, 0, 0.3),
+    0 2px 10px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transform: translateZ(30px);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);
-  transform: translateY(-2px);
+  border-color: var(--accent-color);
+  box-shadow: 
+    inset 0 2px 8px rgba(0, 0, 0, 0.3),
+    0 0 0 4px rgba(212, 175, 55, 0.2),
+    0 0 30px rgba(212, 175, 55, 0.3);
+  transform: translateZ(50px) translateY(-3px);
 }
 
 .form-group textarea {
@@ -215,8 +277,8 @@
 .contact-form button {
   align-self: flex-start;
   padding: 16px 40px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
+  background: linear-gradient(135deg, var(--accent-color), #ffd700);
+  color: #0a0e1a;
   border: none;
   border-radius: 12px;
   font-size: 1.05rem;
@@ -225,7 +287,11 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+  box-shadow: 
+    0 6px 25px rgba(212, 175, 55, 0.4),
+    0 0 40px rgba(212, 175, 55, 0.3);
+  transform-style: preserve-3d;
+  transform: translateZ(40px);
 }
 
 .contact-form button::before {
@@ -247,8 +313,10 @@
 }
 
 .contact-form button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
+  transform: translateZ(70px) translateY(-5px) scale(1.05);
+  box-shadow: 
+    0 12px 40px rgba(212, 175, 55, 0.6),
+    0 0 60px rgba(212, 175, 55, 0.5);
 }
 
 .contact-form button:active {
